@@ -154,6 +154,10 @@ export class CoreCourseSectionPage implements OnDestroy {
             let promise;
 
             if (course) {
+                if (this.course.id === course.id && this.course.hasOwnProperty('displayname')
+                        && !course.hasOwnProperty('displayname')) {
+                    course.displayname = this.course.displayname;
+                }
                 this.course = course;
             }
 
